@@ -20,16 +20,16 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v3
-      
-    - name: Grant execute permission for gradlew
+    - name: Download Gradle 8.2.0 Wrapper
       run: |
-        if [ ! -f gradlew ]; then
-          gradle wrapper --gradle-version 8.2
-        fi
+        curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradlew -o gradlew
+        curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradlew.bat -o gradlew.bat
+        mkdir -p gradle/wrapper
+        curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradle/wrapper/gradle-wrapper.properties -o gradle/wrapper/gradle-wrapper.properties
+        curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradle/wrapper/gradle-wrapper.jar -o gradle/wrapper/gradle-wrapper.jar
         chmod +x gradlew
-      
+        echo "✓ Gradle 8.2.0 wrapper installed"
+        
     - name: Build Release APK
       run: ./gradlew assembleRelease --stacktrace
       
@@ -51,8 +51,7 @@ jobs:
         echo "✓ APK signed successfully"
         
     - name: Verify APK signature
-      run: |
-        $ANDROID_HOME/build-tools/34.0.0/apksigner verify --verbose KittenTtsPico-signed.apk
+      run: $ANDROID_HOME/build-tools/34.0.0/apksigner verify --verbose KittenTtsPico-signed.apk
         
     - name: Upload Signed APK
       uses: actions/upload-artifact@v4
@@ -63,16 +62,14 @@ jobs:
         
     - name: Create Release
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         files: KittenTtsPico-signed.apk
         name: Release v${{ github.run_number }}
         tag_name: v${{ github.run_number }}
         body: |
           Kitten TTS Pico APK
-          
           Auto-built and signed with apksigner
-          
           Build: ${{ github.run_number }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
