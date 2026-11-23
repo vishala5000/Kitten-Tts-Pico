@@ -1,0 +1,917 @@
+{
+ "name": "Kitten TTS 2 Pico",
+ "version": "2.0",
+ "type": "KITTEN2_TINY",
+ "family": "pico",
+ "sample_rate": 24000,
+ "vocab": "vocab.json",
+ "g2p_dir": "g2p",
+ "default_language": "en",
+ "languages": {
+  "en": {
+   "model": "kitten_tts_2_pico_en",
+   "model_file": "kitten_tts_2_pico_en.onnx",
+   "model_files": {
+    "int8": "kitten_tts_2_pico_en.onnx",
+    "int4": "kitten_tts_2_pico_en_int4.onnx"
+   },
+   "weights_file": "kitten_tts_2_pico_en.safetensors",
+   "voices": "voices_en.npz"
+  },
+  "de": {
+   "model": "kitten_tts_2_pico_de",
+   "model_file": "kitten_tts_2_pico_de.onnx",
+   "model_files": {
+    "int8": "kitten_tts_2_pico_de.onnx",
+    "int4": "kitten_tts_2_pico_de_int4.onnx"
+   },
+   "weights_file": "kitten_tts_2_pico_de.safetensors",
+   "voices": "voices_de.npz"
+  },
+  "es": {
+   "model": "kitten_tts_2_pico_es",
+   "model_file": "kitten_tts_2_pico_es.onnx",
+   "model_files": {
+    "int8": "kitten_tts_2_pico_es.onnx",
+    "int4": "kitten_tts_2_pico_es_int4.onnx"
+   },
+   "weights_file": "kitten_tts_2_pico_es.safetensors",
+   "voices": "voices_es.npz"
+  },
+  "it": {
+   "model": "kitten_tts_2_pico_it",
+   "model_file": "kitten_tts_2_pico_it.onnx",
+   "model_files": {
+    "int8": "kitten_tts_2_pico_it.onnx",
+    "int4": "kitten_tts_2_pico_it_int4.onnx"
+   },
+   "weights_file": "kitten_tts_2_pico_it.safetensors",
+   "voices": "voices_it.npz"
+  },
+  "pt": {
+   "model": "kitten_tts_2_pico_pt",
+   "model_file": "kitten_tts_2_pico_pt.onnx",
+   "model_files": {
+    "int8": "kitten_tts_2_pico_pt.onnx",
+    "int4": "kitten_tts_2_pico_pt_int4.onnx"
+   },
+   "weights_file": "kitten_tts_2_pico_pt.safetensors",
+   "voices": "voices_pt.npz"
+  },
+  "ru": {
+   "model": "kitten_tts_2_pico_ru",
+   "model_file": "kitten_tts_2_pico_ru.onnx",
+   "model_files": {
+    "int8": "kitten_tts_2_pico_ru.onnx",
+    "int4": "kitten_tts_2_pico_ru_int4.onnx"
+   },
+   "weights_file": "kitten_tts_2_pico_ru.safetensors",
+   "voices": "voices_ru.npz"
+  },
+  "hi": {
+   "model": "kitten_tts_2_pico_hi",
+   "model_file": "kitten_tts_2_pico_hi.onnx",
+   "model_files": {
+    "int8": "kitten_tts_2_pico_hi.onnx",
+    "int4": "kitten_tts_2_pico_hi_int4.onnx"
+   },
+   "weights_file": "kitten_tts_2_pico_hi.safetensors",
+   "voices": "voices_hi.npz"
+  },
+  "fr": {
+   "model": "kitten_tts_2_pico_fr",
+   "model_file": "kitten_tts_2_pico_fr.onnx",
+   "model_files": {
+    "int8": "kitten_tts_2_pico_fr.onnx",
+    "int4": "kitten_tts_2_pico_fr_int4.onnx"
+   },
+   "weights_file": "kitten_tts_2_pico_fr.safetensors",
+   "voices": "voices_fr.npz"
+  }
+ },
+ "voices": {
+  "en": [
+   {
+    "key": "eleanor",
+    "name": "Eleanor",
+    "description": "Somber historian (female)"
+   },
+   {
+    "key": "edith",
+    "name": "Edith",
+    "description": "Elderly grandmother soft (female)"
+   },
+   {
+    "key": "otis",
+    "name": "Otis",
+    "description": "Rumbling blues musician (male)"
+   },
+   {
+    "key": "frank",
+    "name": "Frank",
+    "description": "Grizzled war veteran gravelly (male)"
+   }
+  ],
+  "de": [
+   {
+    "key": "anna",
+    "name": "Anna",
+    "description": "Female 1"
+   },
+   {
+    "key": "mia",
+    "name": "Mia",
+    "description": "Female 2"
+   },
+   {
+    "key": "lukas",
+    "name": "Lukas",
+    "description": "Male 1"
+   },
+   {
+    "key": "paul",
+    "name": "Paul",
+    "description": "Male 2"
+   }
+  ],
+  "es": [
+   {
+    "key": "sofia",
+    "name": "Sofia",
+    "description": "Female 1"
+   },
+   {
+    "key": "elena",
+    "name": "Elena",
+    "description": "Female 2"
+   },
+   {
+    "key": "pablo",
+    "name": "Pablo",
+    "description": "Male 1"
+   },
+   {
+    "key": "mateo",
+    "name": "Mateo",
+    "description": "Male 2"
+   }
+  ],
+  "it": [
+   {
+    "key": "francesca",
+    "name": "Francesca",
+    "description": "Female 1"
+   },
+   {
+    "key": "alessandro",
+    "name": "Alessandro",
+    "description": "Male 1"
+   },
+   {
+    "key": "giorgio",
+    "name": "Giorgio",
+    "description": "Male 2"
+   },
+   {
+    "key": "davide",
+    "name": "Davide",
+    "description": "Male 3"
+   }
+  ],
+  "pt": [
+   {
+    "key": "juliana",
+    "name": "Juliana",
+    "description": "Female 1"
+   },
+   {
+    "key": "larissa",
+    "name": "Larissa",
+    "description": "Female 2"
+   },
+   {
+    "key": "gustavo",
+    "name": "Gustavo",
+    "description": "Male 1"
+   },
+   {
+    "key": "caio",
+    "name": "Caio",
+    "description": "Male 2"
+   }
+  ],
+  "ru": [
+   {
+    "key": "olga",
+    "name": "Olga",
+    "description": "Female 1"
+   },
+   {
+    "key": "tatiana",
+    "name": "Tatiana",
+    "description": "Female 2"
+   },
+   {
+    "key": "sergei",
+    "name": "Sergei",
+    "description": "Male 1"
+   },
+   {
+    "key": "alexei",
+    "name": "Alexei",
+    "description": "Male 2"
+   }
+  ],
+  "hi": [
+   {
+    "key": "priya",
+    "name": "Priya",
+    "description": "Female 1"
+   },
+   {
+    "key": "arjun",
+    "name": "Arjun",
+    "description": "Male 1"
+   }
+  ],
+  "fr": [
+   {
+    "key": "amelie",
+    "name": "Amelie",
+    "description": "Female 1"
+   },
+   {
+    "key": "lea",
+    "name": "Lea",
+    "description": "Female 2"
+   },
+   {
+    "key": "theo",
+    "name": "Theo",
+    "description": "Male 1"
+   },
+   {
+    "key": "baptiste",
+    "name": "Baptiste",
+    "description": "Male 2"
+   }
+  ]
+ },
+ "quantization": {
+  "int8": {
+   "weights": "int8, symmetric, per output channel (DequantizeLinear)",
+   "activations": "float32",
+   "method": "post-training quantization + quantization-aware distillation from the fp32 model"
+  },
+  "int4": {
+   "weights": "int4, symmetric, blocks of 128 along the input axis with one fp16 scale per block (DequantizeLinear block_size); ~1% most sensitive weights int8; small float parameters fp16",
+   "activations": "float32",
+   "method": "quantization-aware distillation from the fp32 model",
+   "requires": "onnxruntime>=1.20 (ONNX opset 21)"
+  }
+ },
+ "models": {
+  "kitten_tts_2_pico_en": {
+   "onnx": "kitten_tts_2_pico_en.onnx",
+   "onnx_int4": "kitten_tts_2_pico_en_int4.onnx",
+   "safetensors": "kitten_tts_2_pico_en.safetensors",
+   "languages": [
+    "en"
+   ],
+   "phonemizer": "v1",
+   "source": {
+    "engine": "pico_en_best",
+    "checkpoint": "kitten_pico_lang/en/s2/best.pth",
+    "step": 20000,
+    "stage1": "kitten_pico_lang/en/s1/last.pth",
+    "pack_key": "pico__kitten_pico_lang__en__s2__best__step20000"
+   },
+   "architecture": {
+    "hidden_dim": 192,
+    "n_layer": 2,
+    "n_token": 178,
+    "n_mels": 80,
+    "style_dim": 128,
+    "max_dur": 50,
+    "dropout": 0.2,
+    "text_encoder_kernel_size": 5,
+    "decoder": {
+     "type": "istftnet_mini_2",
+     "resblock_kernel_sizes": [
+      3,
+      3
+     ],
+     "upsample_rates": [
+      10,
+      6
+     ],
+     "upsample_initial_channel": 128,
+     "resblock_dilation_sizes": [
+      [
+       1,
+       3,
+       5
+      ],
+      [
+       1,
+       3,
+       5
+      ]
+     ],
+     "upsample_kernel_sizes": [
+      20,
+      12
+     ],
+     "gen_istft_n_fft": 20,
+     "gen_istft_hop_size": 5
+    },
+    "albert": {
+     "bos_token_id": 2,
+     "pad_token_id": 0,
+     "eos_token_id": 3,
+     "dropout": 0.1,
+     "vocab_size": 178,
+     "embedding_size": 128,
+     "hidden_size": 384,
+     "num_hidden_layers": 12,
+     "num_hidden_groups": 1,
+     "num_attention_heads": 6,
+     "inner_group_num": 1,
+     "hidden_act": "gelu_new",
+     "intermediate_size": 1024,
+     "hidden_dropout_prob": 0,
+     "attention_probs_dropout_prob": 0,
+     "max_position_embeddings": 512,
+     "type_vocab_size": 2,
+     "initializer_range": 0.02,
+     "layer_norm_eps": 1e-12,
+     "classifier_dropout_prob": 0.1,
+     "position_embedding_type": "absolute",
+     "model_type": "albert"
+    }
+   }
+  },
+  "kitten_tts_2_pico_de": {
+   "onnx": "kitten_tts_2_pico_de.onnx",
+   "onnx_int4": "kitten_tts_2_pico_de_int4.onnx",
+   "safetensors": "kitten_tts_2_pico_de.safetensors",
+   "languages": [
+    "de"
+   ],
+   "phonemizer": "v1",
+   "source": {
+    "engine": "pico_de_best",
+    "checkpoint": "kitten_pico_lang/de/s2/best.pth",
+    "step": 14000,
+    "stage1": "kitten_pico_lang/de/s1/last.pth",
+    "pack_key": "pico__kitten_pico_lang__de__s2__best__step14000"
+   },
+   "architecture": {
+    "hidden_dim": 192,
+    "n_layer": 2,
+    "n_token": 178,
+    "n_mels": 80,
+    "style_dim": 128,
+    "max_dur": 50,
+    "dropout": 0.2,
+    "text_encoder_kernel_size": 5,
+    "decoder": {
+     "type": "istftnet_mini_2",
+     "resblock_kernel_sizes": [
+      3,
+      3
+     ],
+     "upsample_rates": [
+      10,
+      6
+     ],
+     "upsample_initial_channel": 128,
+     "resblock_dilation_sizes": [
+      [
+       1,
+       3,
+       5
+      ],
+      [
+       1,
+       3,
+       5
+      ]
+     ],
+     "upsample_kernel_sizes": [
+      20,
+      12
+     ],
+     "gen_istft_n_fft": 20,
+     "gen_istft_hop_size": 5
+    },
+    "albert": {
+     "bos_token_id": 2,
+     "pad_token_id": 0,
+     "eos_token_id": 3,
+     "dropout": 0.1,
+     "vocab_size": 178,
+     "embedding_size": 128,
+     "hidden_size": 384,
+     "num_hidden_layers": 12,
+     "num_hidden_groups": 1,
+     "num_attention_heads": 6,
+     "inner_group_num": 1,
+     "hidden_act": "gelu_new",
+     "intermediate_size": 1024,
+     "hidden_dropout_prob": 0,
+     "attention_probs_dropout_prob": 0,
+     "max_position_embeddings": 512,
+     "type_vocab_size": 2,
+     "initializer_range": 0.02,
+     "layer_norm_eps": 1e-12,
+     "classifier_dropout_prob": 0.1,
+     "position_embedding_type": "absolute",
+     "model_type": "albert"
+    }
+   }
+  },
+  "kitten_tts_2_pico_es": {
+   "onnx": "kitten_tts_2_pico_es.onnx",
+   "onnx_int4": "kitten_tts_2_pico_es_int4.onnx",
+   "safetensors": "kitten_tts_2_pico_es.safetensors",
+   "languages": [
+    "es"
+   ],
+   "phonemizer": "v1",
+   "source": {
+    "engine": "pico_es_best",
+    "checkpoint": "kitten_pico_lang/es/s2/best.pth",
+    "step": 16000,
+    "stage1": "kitten_pico_lang/es/s1/last.pth",
+    "pack_key": "pico__kitten_pico_lang__es__s2__best__step16000"
+   },
+   "architecture": {
+    "hidden_dim": 192,
+    "n_layer": 2,
+    "n_token": 178,
+    "n_mels": 80,
+    "style_dim": 128,
+    "max_dur": 50,
+    "dropout": 0.2,
+    "text_encoder_kernel_size": 5,
+    "decoder": {
+     "type": "istftnet_mini_2",
+     "resblock_kernel_sizes": [
+      3,
+      3
+     ],
+     "upsample_rates": [
+      10,
+      6
+     ],
+     "upsample_initial_channel": 128,
+     "resblock_dilation_sizes": [
+      [
+       1,
+       3,
+       5
+      ],
+      [
+       1,
+       3,
+       5
+      ]
+     ],
+     "upsample_kernel_sizes": [
+      20,
+      12
+     ],
+     "gen_istft_n_fft": 20,
+     "gen_istft_hop_size": 5
+    },
+    "albert": {
+     "bos_token_id": 2,
+     "pad_token_id": 0,
+     "eos_token_id": 3,
+     "dropout": 0.1,
+     "vocab_size": 178,
+     "embedding_size": 128,
+     "hidden_size": 384,
+     "num_hidden_layers": 12,
+     "num_hidden_groups": 1,
+     "num_attention_heads": 6,
+     "inner_group_num": 1,
+     "hidden_act": "gelu_new",
+     "intermediate_size": 1024,
+     "hidden_dropout_prob": 0,
+     "attention_probs_dropout_prob": 0,
+     "max_position_embeddings": 512,
+     "type_vocab_size": 2,
+     "initializer_range": 0.02,
+     "layer_norm_eps": 1e-12,
+     "classifier_dropout_prob": 0.1,
+     "position_embedding_type": "absolute",
+     "model_type": "albert"
+    }
+   }
+  },
+  "kitten_tts_2_pico_it": {
+   "onnx": "kitten_tts_2_pico_it.onnx",
+   "onnx_int4": "kitten_tts_2_pico_it_int4.onnx",
+   "safetensors": "kitten_tts_2_pico_it.safetensors",
+   "languages": [
+    "it"
+   ],
+   "phonemizer": "v1",
+   "source": {
+    "engine": "pico_it_best",
+    "checkpoint": "kitten_pico_lang/it/s2/best.pth",
+    "step": 12000,
+    "stage1": "kitten_pico_lang/it/s1/last.pth",
+    "pack_key": "pico__kitten_pico_lang__it__s2__best__step12000"
+   },
+   "architecture": {
+    "hidden_dim": 192,
+    "n_layer": 2,
+    "n_token": 178,
+    "n_mels": 80,
+    "style_dim": 128,
+    "max_dur": 50,
+    "dropout": 0.2,
+    "text_encoder_kernel_size": 5,
+    "decoder": {
+     "type": "istftnet_mini_2",
+     "resblock_kernel_sizes": [
+      3,
+      3
+     ],
+     "upsample_rates": [
+      10,
+      6
+     ],
+     "upsample_initial_channel": 128,
+     "resblock_dilation_sizes": [
+      [
+       1,
+       3,
+       5
+      ],
+      [
+       1,
+       3,
+       5
+      ]
+     ],
+     "upsample_kernel_sizes": [
+      20,
+      12
+     ],
+     "gen_istft_n_fft": 20,
+     "gen_istft_hop_size": 5
+    },
+    "albert": {
+     "bos_token_id": 2,
+     "pad_token_id": 0,
+     "eos_token_id": 3,
+     "dropout": 0.1,
+     "vocab_size": 178,
+     "embedding_size": 128,
+     "hidden_size": 384,
+     "num_hidden_layers": 12,
+     "num_hidden_groups": 1,
+     "num_attention_heads": 6,
+     "inner_group_num": 1,
+     "hidden_act": "gelu_new",
+     "intermediate_size": 1024,
+     "hidden_dropout_prob": 0,
+     "attention_probs_dropout_prob": 0,
+     "max_position_embeddings": 512,
+     "type_vocab_size": 2,
+     "initializer_range": 0.02,
+     "layer_norm_eps": 1e-12,
+     "classifier_dropout_prob": 0.1,
+     "position_embedding_type": "absolute",
+     "model_type": "albert"
+    }
+   }
+  },
+  "kitten_tts_2_pico_pt": {
+   "onnx": "kitten_tts_2_pico_pt.onnx",
+   "onnx_int4": "kitten_tts_2_pico_pt_int4.onnx",
+   "safetensors": "kitten_tts_2_pico_pt.safetensors",
+   "languages": [
+    "pt"
+   ],
+   "phonemizer": "v1",
+   "source": {
+    "engine": "pico_pt_best",
+    "checkpoint": "kitten_pico_lang/pt/s2/best.pth",
+    "step": 16000,
+    "stage1": "kitten_pico_lang/pt/s1/last.pth",
+    "pack_key": "pico__kitten_pico_lang__pt__s2__best__step16000"
+   },
+   "architecture": {
+    "hidden_dim": 192,
+    "n_layer": 2,
+    "n_token": 178,
+    "n_mels": 80,
+    "style_dim": 128,
+    "max_dur": 50,
+    "dropout": 0.2,
+    "text_encoder_kernel_size": 5,
+    "decoder": {
+     "type": "istftnet_mini_2",
+     "resblock_kernel_sizes": [
+      3,
+      3
+     ],
+     "upsample_rates": [
+      10,
+      6
+     ],
+     "upsample_initial_channel": 128,
+     "resblock_dilation_sizes": [
+      [
+       1,
+       3,
+       5
+      ],
+      [
+       1,
+       3,
+       5
+      ]
+     ],
+     "upsample_kernel_sizes": [
+      20,
+      12
+     ],
+     "gen_istft_n_fft": 20,
+     "gen_istft_hop_size": 5
+    },
+    "albert": {
+     "bos_token_id": 2,
+     "pad_token_id": 0,
+     "eos_token_id": 3,
+     "dropout": 0.1,
+     "vocab_size": 178,
+     "embedding_size": 128,
+     "hidden_size": 384,
+     "num_hidden_layers": 12,
+     "num_hidden_groups": 1,
+     "num_attention_heads": 6,
+     "inner_group_num": 1,
+     "hidden_act": "gelu_new",
+     "intermediate_size": 1024,
+     "hidden_dropout_prob": 0,
+     "attention_probs_dropout_prob": 0,
+     "max_position_embeddings": 512,
+     "type_vocab_size": 2,
+     "initializer_range": 0.02,
+     "layer_norm_eps": 1e-12,
+     "classifier_dropout_prob": 0.1,
+     "position_embedding_type": "absolute",
+     "model_type": "albert"
+    }
+   }
+  },
+  "kitten_tts_2_pico_ru": {
+   "onnx": "kitten_tts_2_pico_ru.onnx",
+   "onnx_int4": "kitten_tts_2_pico_ru_int4.onnx",
+   "safetensors": "kitten_tts_2_pico_ru.safetensors",
+   "languages": [
+    "ru"
+   ],
+   "phonemizer": "v1",
+   "source": {
+    "engine": "pico_ru_best",
+    "checkpoint": "kitten_pico_lang/ru/s2/best.pth",
+    "step": 14000,
+    "stage1": "kitten_pico_lang/ru/s1/last.pth",
+    "pack_key": "pico__kitten_pico_lang__ru__s2__best__step14000"
+   },
+   "architecture": {
+    "hidden_dim": 192,
+    "n_layer": 2,
+    "n_token": 178,
+    "n_mels": 80,
+    "style_dim": 128,
+    "max_dur": 50,
+    "dropout": 0.2,
+    "text_encoder_kernel_size": 5,
+    "decoder": {
+     "type": "istftnet_mini_2",
+     "resblock_kernel_sizes": [
+      3,
+      3
+     ],
+     "upsample_rates": [
+      10,
+      6
+     ],
+     "upsample_initial_channel": 128,
+     "resblock_dilation_sizes": [
+      [
+       1,
+       3,
+       5
+      ],
+      [
+       1,
+       3,
+       5
+      ]
+     ],
+     "upsample_kernel_sizes": [
+      20,
+      12
+     ],
+     "gen_istft_n_fft": 20,
+     "gen_istft_hop_size": 5
+    },
+    "albert": {
+     "bos_token_id": 2,
+     "pad_token_id": 0,
+     "eos_token_id": 3,
+     "dropout": 0.1,
+     "vocab_size": 178,
+     "embedding_size": 128,
+     "hidden_size": 384,
+     "num_hidden_layers": 12,
+     "num_hidden_groups": 1,
+     "num_attention_heads": 6,
+     "inner_group_num": 1,
+     "hidden_act": "gelu_new",
+     "intermediate_size": 1024,
+     "hidden_dropout_prob": 0,
+     "attention_probs_dropout_prob": 0,
+     "max_position_embeddings": 512,
+     "type_vocab_size": 2,
+     "initializer_range": 0.02,
+     "layer_norm_eps": 1e-12,
+     "classifier_dropout_prob": 0.1,
+     "position_embedding_type": "absolute",
+     "model_type": "albert"
+    }
+   }
+  },
+  "kitten_tts_2_pico_hi": {
+   "onnx": "kitten_tts_2_pico_hi.onnx",
+   "onnx_int4": "kitten_tts_2_pico_hi_int4.onnx",
+   "safetensors": "kitten_tts_2_pico_hi.safetensors",
+   "languages": [
+    "hi"
+   ],
+   "phonemizer": "v1",
+   "source": {
+    "engine": "pico_hi_best",
+    "checkpoint": "kitten_pico_lang/hi/s2/best.pth",
+    "step": 18000,
+    "stage1": "kitten_pico_lang/hi/s1/last.pth",
+    "pack_key": "pico__kitten_pico_lang__hi__s2__best__step18000"
+   },
+   "architecture": {
+    "hidden_dim": 192,
+    "n_layer": 2,
+    "n_token": 178,
+    "n_mels": 80,
+    "style_dim": 128,
+    "max_dur": 50,
+    "dropout": 0.2,
+    "text_encoder_kernel_size": 5,
+    "decoder": {
+     "type": "istftnet_mini_2",
+     "resblock_kernel_sizes": [
+      3,
+      3
+     ],
+     "upsample_rates": [
+      10,
+      6
+     ],
+     "upsample_initial_channel": 128,
+     "resblock_dilation_sizes": [
+      [
+       1,
+       3,
+       5
+      ],
+      [
+       1,
+       3,
+       5
+      ]
+     ],
+     "upsample_kernel_sizes": [
+      20,
+      12
+     ],
+     "gen_istft_n_fft": 20,
+     "gen_istft_hop_size": 5
+    },
+    "albert": {
+     "bos_token_id": 2,
+     "pad_token_id": 0,
+     "eos_token_id": 3,
+     "dropout": 0.1,
+     "vocab_size": 178,
+     "embedding_size": 128,
+     "hidden_size": 384,
+     "num_hidden_layers": 12,
+     "num_hidden_groups": 1,
+     "num_attention_heads": 6,
+     "inner_group_num": 1,
+     "hidden_act": "gelu_new",
+     "intermediate_size": 1024,
+     "hidden_dropout_prob": 0,
+     "attention_probs_dropout_prob": 0,
+     "max_position_embeddings": 512,
+     "type_vocab_size": 2,
+     "initializer_range": 0.02,
+     "layer_norm_eps": 1e-12,
+     "classifier_dropout_prob": 0.1,
+     "position_embedding_type": "absolute",
+     "model_type": "albert"
+    }
+   }
+  },
+  "kitten_tts_2_pico_fr": {
+   "onnx": "kitten_tts_2_pico_fr.onnx",
+   "onnx_int4": "kitten_tts_2_pico_fr_int4.onnx",
+   "safetensors": "kitten_tts_2_pico_fr.safetensors",
+   "languages": [
+    "fr"
+   ],
+   "phonemizer": "v1",
+   "source": {
+    "engine": "pico_fr_best",
+    "checkpoint": "kitten_pico_lang/fr/s2/best.pth",
+    "step": 14000,
+    "stage1": "kitten_pico_lang/fr/s1/last.pth",
+    "pack_key": "pico__kitten_pico_lang__fr__s2__best__step14000"
+   },
+   "architecture": {
+    "hidden_dim": 192,
+    "n_layer": 2,
+    "n_token": 178,
+    "n_mels": 80,
+    "style_dim": 128,
+    "max_dur": 50,
+    "dropout": 0.2,
+    "text_encoder_kernel_size": 5,
+    "decoder": {
+     "type": "istftnet_mini_2",
+     "resblock_kernel_sizes": [
+      3,
+      3
+     ],
+     "upsample_rates": [
+      10,
+      6
+     ],
+     "upsample_initial_channel": 128,
+     "resblock_dilation_sizes": [
+      [
+       1,
+       3,
+       5
+      ],
+      [
+       1,
+       3,
+       5
+      ]
+     ],
+     "upsample_kernel_sizes": [
+      20,
+      12
+     ],
+     "gen_istft_n_fft": 20,
+     "gen_istft_hop_size": 5
+    },
+    "albert": {
+     "bos_token_id": 2,
+     "pad_token_id": 0,
+     "eos_token_id": 3,
+     "dropout": 0.1,
+     "vocab_size": 178,
+     "embedding_size": 128,
+     "hidden_size": 384,
+     "num_hidden_layers": 12,
+     "num_hidden_groups": 1,
+     "num_attention_heads": 6,
+     "inner_group_num": 1,
+     "hidden_act": "gelu_new",
+     "intermediate_size": 1024,
+     "hidden_dropout_prob": 0,
+     "attention_probs_dropout_prob": 0,
+     "max_position_embeddings": 512,
+     "type_vocab_size": 2,
+     "initializer_range": 0.02,
+     "layer_norm_eps": 1e-12,
+     "classifier_dropout_prob": 0.1,
+     "position_embedding_type": "absolute",
+     "model_type": "albert"
+    }
+   }
+  }
+ },
+ "phonemizer": "v1",
+ "default_weights": "int8"
+}
