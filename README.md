@@ -1,7 +1,7 @@
 # Kitten TTS 2 Pico
 
-Android TTS app (English + Hindi int4 ONNX, 24 kHz).
+Real ONNX int4 inference (EN + HI), 24 kHz.
 
-Red/black theme. Generate, play/pause, save WAV.
+input_ids/style/speed contract, [510,256] voice packs, vocab.json G2P.
 
 License: Apache-2.0

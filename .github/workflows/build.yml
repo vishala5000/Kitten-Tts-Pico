@@ -1,26 +1,17 @@
 name: Build and Sign APK
-
 on:
   push:
     branches: [ main, master ]
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { java-version: '17', distribution: 'temurin' }
       - name: Install Gradle 8.2 FINAL wrapper
         run: |
           mkdir -p gradle/wrapper
@@ -37,47 +28,31 @@ jobs:
           curl -fsSL https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradle/wrapper/gradle-wrapper.jar -o gradle/wrapper/gradle-wrapper.jar
           chmod +x gradlew
           ./gradlew --version
-
       - name: Build Release APK
         run: ./gradlew assembleRelease --stacktrace --no-daemon
-
-      - name: Generate signing keystore
+      - name: Generate keystore
         run: |
           keytool -genkeypair -v -keystore release.keystore -alias kitten \
             -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass kitten123 -keypass kitten123 \
-            -dname "CN=Kitten TTS, O=KittenTTS, C=US"
-
-      - name: Zipalign and sign with apksigner
+            -storepass kitten123 -keypass kitten123 -dname "CN=Kitten TTS, O=KittenTTS, C=US"
+      - name: Zipalign and sign
         run: |
           SDK="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
           BT=$(find "$SDK/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n 1)
-          echo "Using build-tools: $BT"
           UNSIGNED=$(find app/build/outputs/apk/release -name "*.apk" | head -n 1)
-          echo "Unsigned APK: $UNSIGNED"
           "$BT/zipalign" -f -p 4 "$UNSIGNED" aligned.apk
-          "$BT/apksigner" sign \
-            --ks release.keystore \
-            --ks-pass pass:kitten123 \
-            --key-pass pass:kitten123 \
-            --ks-key-alias kitten \
-            --out KittenTtsPico-signed.apk \
-            aligned.apk
+          "$BT/apksigner" sign --ks release.keystore --ks-pass pass:kitten123 \
+            --key-pass pass:kitten123 --ks-key-alias kitten \
+            --out KittenTtsPico-signed.apk aligned.apk
           "$BT/apksigner" verify --verbose KittenTtsPico-signed.apk
-
-      - name: Upload signed APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: KittenTtsPico-Signed
-          path: KittenTtsPico-signed.apk
-          retention-days: 30
-
-      - name: Create GitHub Release
+      - uses: actions/upload-artifact@v4
+        with: { name: KittenTtsPico-Signed, path: KittenTtsPico-signed.apk, retention-days: 30 }
+      - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: KittenTtsPico-signed.apk
           name: Kitten TTS Pico v${{ github.run_number }}
           tag_name: v${{ github.run_number }}
-          body: Auto-built and signed with apksigner.
+          body: Real int4 inference, EN+HI, signed with apksigner.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
